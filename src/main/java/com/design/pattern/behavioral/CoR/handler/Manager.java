@@ -13,12 +13,12 @@ public class Manager implements ExpensesHandler{
 
     @Override
     public void handleExpenses(ExpenseRequest expenseRequest) {
-        if (expenseRequest.getAmount() <= APPROVAL_LIMIT ){
-            System.out.println("Manager : Yes, you have my approval for these expenses of "+expenseRequest.getAmount());
+        if (expenseRequest.amount() <= APPROVAL_LIMIT ){
+            System.out.println("Manager : Yes, you have my approval for these expenses of "+expenseRequest.amount());
         }
         else {
             String nameOfMyHierarchicSuperior = this.nextHandler.getClass().getName();
-            System.out.println("Manager : I cannot approve these expenses of "+ expenseRequest.getAmount() +
+            System.out.println("Manager : I cannot approve these expenses of "+ expenseRequest.amount() +
                     ". You must going to see "+
                     nameOfMyHierarchicSuperior.substring(nameOfMyHierarchicSuperior.lastIndexOf(".")+1));
             this.nextHandler.handleExpenses(expenseRequest);

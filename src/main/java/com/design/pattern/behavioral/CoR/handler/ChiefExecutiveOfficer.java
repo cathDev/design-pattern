@@ -12,11 +12,11 @@ public class ChiefExecutiveOfficer implements ExpensesHandler{
 
     @Override
     public void handleExpenses(ExpenseRequest expenseRequest) {
-        if (expenseRequest.getAmount() <= APPROVAL_LIMIT){
-            System.out.println("ChiefExecutiveOfficer : Yes, you have my approval for these expenses of "+expenseRequest.getAmount());
+        if (expenseRequest.amount() <= APPROVAL_LIMIT){
+            System.out.println("ChiefExecutiveOfficer : Yes, you have my approval for these expenses of "+expenseRequest.amount());
         }
         else {
-            System.out.println("ChiefExecutiveOfficer : I cannot approve these expenses of " + expenseRequest.getAmount()
+            System.out.println("ChiefExecutiveOfficer : I cannot approve these expenses of " + expenseRequest.amount()
                     + ". They are too high, it's look like a fraud.");
 
         }
